@@ -16,5 +16,5 @@ items:
       path: petstore-api
       includers:
         - name: petstore-api
-          input: /resources/petstore/petstore-api-draft.yaml
+          input: resources/petstore/petstore-api-draft.yaml
       mode: link
