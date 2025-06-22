@@ -11,3 +11,10 @@ items:
     include:
       path: sub-section/toc.yaml
       mode: link
+  - name: petstore-api
+    include:
+      path: petstore-api
+      includers:
+        - name: petstore-api
+          input: /resources/petstore/petstore-api-draft.yaml
+      mode: link
