@@ -41,7 +41,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
     post:
-      summary: 'GET /pets'
+      summary: 'POST /pets'
       operationId: createPets
       tags:
         - /pets
