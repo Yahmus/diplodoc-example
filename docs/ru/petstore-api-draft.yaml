@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 1.0.0
+  version: 1.0.1
   title: Swagger Petstore Draft
   license:
     name: MIT
@@ -12,7 +12,7 @@ paths:
       summary: 'GET /pets'
       operationId: listPets
       tags:
-        - pets
+        - /pets
       parameters:
         - name: limit
           in: query
@@ -24,7 +24,7 @@ paths:
             format: int32
       responses:
         '200':
-          description: 'Хз что это за тудушка'
+          description: 'Запрос обработан успешно'
           headers:
             x-next:
               description: 'Запрос обработан успешно'
@@ -44,7 +44,7 @@ paths:
       summary: 'GET /pets'
       operationId: createPets
       tags:
-        - pets
+        - /pets
       requestBody:
         content:
           application/json:
@@ -65,7 +65,7 @@ paths:
       summary: 'GET pets/{petId}'
       operationId: showPetById
       tags:
-        - pets
+        - /pets
       parameters:
         - name: petId
           in: path
