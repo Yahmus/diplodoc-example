@@ -16,5 +16,5 @@ items:
       path: openapi
       includers:
         - name: openapi
-          input: docs/ru/petstore-api-draft.yaml
+          input: ./docs/petstore-api-draft.yaml
       mode: link
