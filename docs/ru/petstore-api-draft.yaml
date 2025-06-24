@@ -79,6 +79,7 @@ paths:
           content:
             application/json:
               schema:
+                description: 'Модель объекта Pet'
                 $ref: '#/components/schemas/Pet'
         '400':
           description: 'Передан некорректный ID'
