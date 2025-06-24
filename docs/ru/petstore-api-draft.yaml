@@ -96,6 +96,7 @@ paths:
 components:
   schemas:
     Pet:
+      description: 'Модель объекта Животное'
       type: object
       required:
         - id
