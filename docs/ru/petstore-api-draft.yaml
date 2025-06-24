@@ -10,6 +10,7 @@ paths:
   /pets:
     get:
       summary: 'GET /pets'
+      description: 'Получить массив из объектов Животные'
       operationId: listPets
       tags:
         - /pets
@@ -42,6 +43,7 @@ paths:
                 $ref: '#/components/schemas/Error'
     post:
       summary: 'POST /pets'
+      description: 'Добавить животное'
       operationId: createPets
       tags:
         - /pets
@@ -63,6 +65,7 @@ paths:
   /pets/{petId}:
     get:
       summary: 'GET pets/{petId}'
+      description: 'Получить объект конкретного животного по ID'
       operationId: showPetById
       tags:
         - /pets
@@ -70,7 +73,7 @@ paths:
         - name: petId
           in: path
           required: true
-          description: 'todo'
+          description: 'ID запрашиваемого объекта'
           schema:
             type: string
       responses:
@@ -79,7 +82,6 @@ paths:
           content:
             application/json:
               schema:
-                description: 'Модель объекта Pet'
                 $ref: '#/components/schemas/Pet'
         '400':
           description: 'Передан некорректный ID'
