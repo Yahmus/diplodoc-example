@@ -6,7 +6,9 @@ info:
     name: MIT
 servers:
   - url: http://petstore.swagger.io/v1
+    description: 'Основной сервер'
   - url: http://petstore.swagger.io/v2
+    description: 'Второй сервер'
 paths:
   /pets:
     get:
@@ -36,6 +38,12 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Pets'
+        '401':
+          description: 'Ошибка авторизации. Ключ API не указан или указан неправильно.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         default:
           description: 'Непредвиденная ошибка. Пожалуйста, обратитесь к администратору системы.'
           content:
@@ -57,6 +65,12 @@ paths:
       responses:
         '201':
           description: 'Запрос обработан успешно'
+        '401':
+          description: 'Ошибка авторизации. Ключ API не указан или указан неправильно.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         default:
           description: 'Непредвиденная ошибка. Пожалуйста, обратитесь к администратору системы.'
           content:
@@ -88,6 +102,12 @@ paths:
           description: 'Передан некорректный ID'
         '404':
           description: 'Объект не найден'
+        '401':
+          description: 'Ошибка авторизации. Ключ API не указан или указан неправильно.'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
         default:
           description: 'Непредвиденная ошибка. Пожалуйста, обратитесь к администратору системы.'
           content:
@@ -126,3 +146,10 @@ components:
           format: int32
         message:
           type: string
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+security:
+  - ApiKeyAuth: []
